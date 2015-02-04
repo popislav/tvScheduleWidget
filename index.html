@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<!-- TODO: add a corresponding title for your widget -->
+		<title>TV SCHEDULE</title>
+		
+		<!--<link type="text/css" href="../../portal/css/jquery.mobile-1.2.0.min.css" rel="stylesheet" />-->
+        <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+        <link type="text/css" rel="stylesheet" href="css/themes/mytheme.css">
+        <link type="text/css" rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css">
+        <link type="text/css" rel="stylesheet" href="css/mystyle.css"/>
+
+
+
+		<!--embedding the jquery libraries-->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js"></script>
+	
+		<!--defining some helpful functions (before loading js files, debug is used there)-->
+		<script type="text/javascript">
+		</script>
+		
+	</head>
+	<body>
+
+        <div  data-role="page" id="page1" data-theme="d">
+            <div data-role="header" id="header">
+                <h2 id="head_cont">TV SCHEDULE</h2>
+            </div>
+
+            <div data-role="content" class="ui-grid-a first_grid" id="first_grid">
+                <div class="ui-block-a choose_menu ui-responsive" id="grid_a">
+                    <div class="ui-grid-a choose_channel_button" id="c_channel">
+                        <div class="ui-block-a" style="width:75%;">
+                            <select id="select_channel1" data-mini="true">
+                                <option value="choose_channel">Choose Channel</option> 
+                                <option value="ORF1">ORF1</option>
+                                <option value="ORF2">ORF2</option>
+                                <option value="ORF3">ORF3</option>
+                                <option value="PULS4">PULS4</option>
+                                <option value="SportPlus">SportPlus</option>
+                                <option value="EuroSport">EuroSport</option>
+                                <option value="EuroSport2">EuroSport 2</option>
+                                <option value="3sat">3Sat</option>
+                                <option value="Das Erste">Das Erste</option>
+                                <option value="BoomerangTV">Boomerang TV</option>
+                                <option value="ZDF">ZDF</option>
+								<option value="HRT1">HRT1</option>
+                                <option value="HRT2">HRT2</option>
+								<option value="HRT3">HRT3</option>
+                                <option value="HRT4">HRT4</option>
+                            </select>
+                        </div>
+                        <div class="ui-block-b" style="width:20%;">
+                            <a id="check_channel_button" href="#" style="float:right;" class="ui-btn ui-icon-arrow-r ui-btn-icon-notext ui-corner-all" data-mini="true">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-block-b content_div ui-responsive" id="grid_b">
+                    <h2 id="ch_name1">Choose Channel Please</h2>
+					<hr/>
+					<div class="ui-responsive"> <!-- class="h_resize" -->
+						<div data-role="content" class="now_next">
+							<h3>NOW:</h3>
+							<h3 id="now_playing_show"></h3>
+							<div><progress id="progress" value="" max="1"></progress></div>
+						</div>
+
+						<div data-role="content" class="now_next">
+							<h3>NEXT:</h3>
+							<h3 id="next_playing_show"></h3><!-- TIME AND SHOW NAME -->
+						</div>
+					</div>
+                </div>
+
+            </div>
+
+            <div data-role="footer" id="footer">
+                <h2>&copy MMIS_022</h2>
+            </div>
+
+        </div>
+        <!--------------------------------------------------------------------------------------------------------------------->
+
+
+        <!-- SECOND PAGE -->
+
+        <div  data-role="page" id="page2" data-theme="d" style="min-height:none;">
+            <div data-role="header" id="header">
+                <h2 id="head_cont_channel">TV SCHEDULE</h2>
+            </div>
+
+            <div data-role="content" class="ui-grid-a first_grid ui-responsive" id="first_grid">
+                <div class="ui-block-a choose_menu" id="grid_a">
+                    <div class="ui-grid-a">
+						<div class="ui-block-a" style="width:20%;">
+                            <a id="check_channel_button" href="#page1" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" data-mini="true"></a>
+                        </div>
+                        <div class="ui-block-b" id="day_choose" style="width:75%;">
+                            <select id="selected_day" class="select_date" style="float:right;" data-mini="true">
+                                <option value="today">Today</option> 
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="overmorrow">Overmorrow</option>
+                            </select>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="ui-block-b content_div" id="grid_a">
+					<h2 id="ch_name3"></h2>
+					<hr/>
+					<div class="h_resize" style="overflow-y:scroll;">
+					<table data-role="table" class="ui-responsive table_prop" id="myTable">
+						<thead><tr></tr></thead>
+						<tbody id="content_table"></tbody>
+					</table>
+					</div>
+				</div>
+				
+			</div>
+            <div data-role="footer" id="footer">
+                <h2>&copy MMIS_022</h2>
+            </div>
+
+        </div>
+        
+		
+        <div data-role="dialog" id="pageErrorDialog" data-theme="d">
+        	<div data-role="header" class="header">
+                <h3><span lang="en">ERROR</span></h3>
+            </div>
+            <div data-role="content">
+            	<span lang="en">ERROR: No Channel Chosen</span>
+            </div>
+			<div data-role="footer" class="footer">
+                <h2>&copy MMIS114_022</h2>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/myscriptvol2.js"></script>
+		<script type="text/javascript" src="js/scroll.js"></script>
+	</body>
+</html>
+

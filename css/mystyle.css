@@ -1,0 +1,256 @@
+/* -- objasnjenje
+ako imamo u html <div class="ui-grid-a ui-responsive"> i jos jednu pod klasu <div class="ui-block-a choose_channel">
+onda selektiramo na ovaj nacin ***CSS***div.ui-grid-a div.choose_channel****
+
+ako imamo u html <div class="ui-grid-a ui-responsive"> i jos jednu pod klasu <div class="ui-block-a" id = "TEST"
+onda selektiramo na ovaj nacin  ***div.ui-grid-a #TEST
+*/
+
+/*progress bar definition*/
+progress{
+    appearance: none;
+    background: lawngreen;
+    color: red;
+    width: 60%;
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+    background:red;
+    border-radius: 5px;
+}
+progress::-webkit-progress-value{
+    background: red;
+    border-radius: 5px;
+}
+progress::-webkit-progress-bar{
+    background: lawngreen;
+    border-radius: 5px;
+}
+
+#head_cont{
+    text-align: center;
+}
+
+#header h2, #footer h2{
+    font-size: 1.4em;
+}
+/**********************************************************************************************************************/
+/* -- BLOCK A -- */
+#grid_b
+{
+    background:rgba(112, 128, 144, 0.70);
+    margin: 1%;
+    text-align: center;
+}
+
+/*div.ui-grid-a div.choose_menu div.choose_channel_button
+{
+    background-color: rgba(255, 50, 81, 0.56); ; margin: 1%;
+    margin-top: 3%; margin-bottom: 3%; margin-left: 15%; margin-right: 15%; height: 10%;
+}*/
+
+div.ui-grid-a div.choose_menu div.choose_channel_button div.ui-block-a
+{
+    width: 80%;
+}
+
+div.ui-grid-a div.choose_menu div.choose_channel_button div.ui-block-b
+{
+    width: 15%;
+    margin-left: 1%;
+}
+
+div.ui-grid-a div.choose_menu div.choose_day_back_button
+{
+    margin-left: 20%; margin-right: 20%;
+}
+
+/*div.ui-grid-a div.choose_menu div.analog_clock
+{
+    position: fixed;
+    margin: 10%;
+    height: auto;
+    background-color: red;
+
+}*/
+
+div.ui-grid-a div.choose_menu div.choose_day_back_button div.ui-block-a
+{
+    width: 15%;
+}
+
+div.ui-grid-a div.choose_menu div.choose_day_back_button div.ui-block-b
+{
+    text-align: center;   /* zamjenio sam da se ne preklapa sa back button, bilo je left*/
+    width: 80%;
+    font-size: 1.4vw;   /*dodao jer boomerangTV je dugacak onda se preklapa sa back button*/
+}
+
+div.ui-grid-a div.choose_menu  div.choose_day_button
+{
+    margin-left: 20%; margin-right: 20%;
+}
+
+/* -- BLOCK B -- */
+#grid_a
+{
+    background: rgba(112, 128, 144, 0.70);
+    text-align: center; margin: 1%;
+
+}
+
+div.ui-grid-a div.content_div div
+{
+    text-align: left;
+}
+
+div.ui-grid-a div.content_div #myTable tr
+{
+    border-bottom: 1px solid lightgray;
+}
+
+@media screen and (min-width: 601px){
+    #header, #footer{
+        height: 10%;
+    }
+
+    #header h2, #footer h2{
+        font-size: 1.2em;
+    }
+
+    h1,h2, h3{
+        font-size: 1.2em;
+    }
+
+/*    div.ui-grid-a div.choose_menu div.choose_channel_button
+    {
+        background-color: red;
+    }*/
+
+    div.ui-grid-a div.choose_menu
+    {
+        width: 30%; 
+    }
+
+    /* -- BLOCK B -- */
+    div.ui-grid-a div.content_div
+    {
+        width: 65%;
+    }
+}
+
+/*body {  min-width:400px; min-height: 300px; }*/
+
+@media screen and (max-width: 600px){
+
+    #header, #footer{
+       height: 5%;
+    }
+
+
+    #header h2, #footer h2{
+        font-size: 0.6em;
+    }
+
+    /* -- BLOCK A -- */
+    div.ui-grid-a div.choose_menu
+    {
+        width: 97%; height: 10%;
+    }
+
+    /* -- BLOCK B -- */
+    div.ui-grid-a div.content_div
+    {
+        width: 97%;
+    }
+
+    div.ui-grid-a div.content_div h2{
+        display: none;
+    }
+
+    h1,h2, h3{
+        font-size: 0.7em;
+    }
+
+/*    div.ui-grid-a div.choose_menu div.choose_channel_button
+    {
+        background-color: blue;
+        margin-top: 1%; margin-bottom: 1%; margin-left: 3%; margin-right: 3%;
+    }*/
+
+
+    div.ui-grid-a div.choose_menu div.choose_day_back_button
+    {
+        float: left;
+        width: 12%;
+        margin-left: 3%; margin-right: 3%;
+    }
+    div.ui-grid-a div.choose_menu div.choose_day_back_button h3{
+        display: none;
+    }
+
+    div.ui-grid-a div.choose_menu  div.choose_day_button{
+        margin-left: 5%; margin-right: 35%;
+    }
+	
+	div.ui-grid-a div.ui-block-a{
+		width:98%;
+	}
+	
+	div.ui-grid-a div.ui-block-b{
+		width:98%;
+	}
+	
+	#chch{
+		width: 75%;
+	}
+	
+	#butt{
+		width: 23%;
+	}
+}
+
+#footer, #header{
+    background: rgba(255, 50, 81, 0.56);
+	border: none;
+}
+
+#first_grid{
+	background: lightgoldenrodyellow;
+}
+
+#page1, #page2{
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	top: 2%;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.ui-overlay-d{
+	background-color: white;
+}	
+
+
+#grid_a {
+	border-radius: 5px;
+}
+
+#grid_b {
+	border-radius: 5px;
+}
+
+#back_page1_button{
+	margin-right: 19%;
+}
+
+[data-role=page]{min-height: 100px !important; position:relative !important;}
+
+.now_next{
+	display: none;
+	}
+	
